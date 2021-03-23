@@ -73,6 +73,13 @@
 - name: make dirs 0755   
   command: find {{ vault_data_path }} -type d ! -perm 0755 -exec chmod 0755 {} \;
 
+- name: recursively update{{ vault_data_path }} directory owner
+  file:
+    path: "{{ vault_data_path }}"
+    state: directory
+    recurse: yes
+    owner: vault
+
 - name: vault service
   service:
     name: vault
