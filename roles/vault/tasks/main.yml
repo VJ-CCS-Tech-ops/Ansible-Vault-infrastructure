@@ -70,6 +70,9 @@
     path: /opt/data
     state: directory
 
+- name: make dirs 0755   
+  command: find {{ yvault_data_path }} -type d ! -perm 0755 -exec chmod 0755 {} \;
+
 - name: vault service
   service:
     name: vault
