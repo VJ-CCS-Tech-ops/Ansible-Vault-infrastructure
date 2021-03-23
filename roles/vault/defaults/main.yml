@@ -1,6 +1,6 @@
 ---
-vault_version: "0.11.1"
-vault_checksum: "sha256:eb8d2461d0ca249c1f91005f878795998bdeafccfde0b9bae82343541ce65996"
+vault_version: "1.6.2"
+vault_checksum: "sha256:8eaac42a3b41ec45bd6498c3dc5a1aa9be2c1723c0a43cc68ac25a8cfcb49ded"
 vault_install_prerequisites: ['unzip']
 vault_user: "vault"
 vault_group: "vault"
