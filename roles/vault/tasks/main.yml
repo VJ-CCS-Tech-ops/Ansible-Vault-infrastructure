@@ -65,6 +65,11 @@
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
 
+- name: Creates data directory
+  file:
+    path: /opt/data
+    state: directory
+
 - name: vault service
   service:
     name: vault
