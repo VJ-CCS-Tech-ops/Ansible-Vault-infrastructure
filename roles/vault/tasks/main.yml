@@ -53,6 +53,11 @@
     group: root
   notify: systemd_reload
 
+- name: Creates directory
+  file:
+    path: /etc/vault.d
+    state: directory
+
 - name: config file
   template:
     src: vault.hcl.j2
