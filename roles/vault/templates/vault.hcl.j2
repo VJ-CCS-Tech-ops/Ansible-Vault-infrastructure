@@ -1,11 +1,34 @@
-storage "s3" {
-  access_key = "ACCESS_KEY_HERE"
-  secret_key = "SECRET_KEY_HERE"
-  bucket     = "vault-secret"
-  region	 = "us-east-2"
+listener "tcp" {
+      address= "0.0.0.0:8200"
+      tls_disable = 1
+ }
+
+ #Storage –
+ # 1.     Integrated (raft) storage is used to simply the architecture and to provide HA
+ # 2.     Identity of the node
+
+storage "raft" {
+  path = "/opt/data"
+  node_id = "Vault-VM01"
 }
 
-listener "tcp" {
-	address     = "0.0.0.0:8200"
-	tls_disable = 1
+# Azure key Vault –
+# 1.     Vault is registered as a client and uses the client secret to store and retrieve the key
+# 2.     Azure key vault replaces shamir key
+
+seal "azurekeyvault" {
+  client_id      = ""
+  client_secret  = ""
+  tenant_id      = ""
+  vault_name     = ""
+  key_name       = ""
 }
+
+# Other-
+# 1.     Give vault the ability to use the mlock syscall without running the process as root. The mlock syscall prevents memory from being swapped to disk.
+# 2.     User interface is enabled
+# 3.     Api address is to mention the ip address to which the application listens
+
+disable_mlock="true"
+ui="true"
+api_addr="http://localhost:8200"
