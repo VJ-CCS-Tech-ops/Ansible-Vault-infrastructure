@@ -39,9 +39,10 @@
 #     group: "{{ vault_group }}"
 #     mode: 0755
 
-- name: Copy vault binaries to /usr/local/b
+- name: Copy vault binaries to /usr/local/bin
+  become: yes
   copy:
-    src: /usr/vault
+    src: /usr/vault/
     dest: /usr/local/bin
 
 - name: "Set vault binary capabilities"
