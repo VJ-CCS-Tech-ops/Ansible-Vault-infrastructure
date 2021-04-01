@@ -1,7 +1,8 @@
 ---
 vault_version: "1.6.2"
 vault_checksum: "sha256:8eaac42a3b41ec45bd6498c3dc5a1aa9be2c1723c0a43cc68ac25a8cfcb49ded"
-vault_install_prerequisites: ['unzip']
+# vault_install_prerequisites: ['unzip']
+vault_addr: VAULT_ADDR=http://127.0.0.1
 vault_user: "vault"
 vault_group: "vault"
 vault_config_path: "/etc/vault.d/vault.hcl"
