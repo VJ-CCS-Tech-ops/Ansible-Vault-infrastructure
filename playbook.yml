@@ -11,3 +11,4 @@
   roles:
     - vault-init
     - vault-unseal
+    - grafana

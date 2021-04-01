@@ -1,0 +1,5 @@
+- name: config file
+  template:
+    src: grafana.ini.js
+    dest: "{{ grafana_ini }}"
+    owner: "{{ vault_user }}"
