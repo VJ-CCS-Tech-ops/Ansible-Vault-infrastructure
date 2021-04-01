@@ -50,9 +50,10 @@
     path: /usr/local/bin/vault
     capability: cap_ipc_lock+ep
     state: present
-- name: setting up enviroment variable
-  environment:
-    VAULT_ADDR: {{ vault_addr }}
+
+# - name: setting up enviroment variable
+#   environment:
+#     VAULT_ADDR: "{{ vault_addr }}"
 
 - name: Copy systemd init file
   template:
