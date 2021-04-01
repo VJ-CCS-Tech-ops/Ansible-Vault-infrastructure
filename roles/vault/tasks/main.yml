@@ -50,7 +50,7 @@
     path: /usr/local/bin/vault
     capability: cap_ipc_lock+ep
     state: present
-
+  enviroment: http://127.0.0.1:8200
 - name: Copy systemd init file
   template:
     src: init.service.j2
