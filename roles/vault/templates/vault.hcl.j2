@@ -17,11 +17,11 @@ storage "raft" {
 # 2.     Azure key vault replaces shamir key
 
 seal "azurekeyvault" {
-  client_id      = "6234c5da-c023-4970-82a9-ced0c39e36ba"
-  client_secret  = "l1.9jxQ93toU.yZ~7l2~heugXPjm2.--uO"
-  tenant_id      = "f583415f-294d-4c12-ad25-8b06cb6bd39b"
-  vault_name     = "ansibletest1"
-  key_name       = "vault_key"
+  client_id      = "563c72bf-26e4-4a31-b2bd-5da514ee2a54"
+  client_secret  = "_4fIYH~yfzbLTf9_TuG_Xq99EfaT-q4v_2"
+  tenant_id      = "2e119e68-e37d-48ba-85b4-0691c2c1ab19"
+  vault_name     = "vm-keyvault-12"
+  key_name       = "wipro-vault"
 }
 
 # Other-
@@ -32,4 +32,4 @@ seal "azurekeyvault" {
 disable_mlock="true"
 ui="true"
 api_addr="http://localhost:8200"
-cluster_addr="https://localhost:8201"
+cluster_addr="http://localhost:8201"
